@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dania Sami | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-card: #020617;
+      --accent: #2563eb;
+      --accent-soft: rgba(37, 99, 235, 0.16);
+      --accent-strong: #60a5fa;
+      --text-main: #f9fafb;
+      --text-soft: #9ca3af;
+      --border-subtle: rgba(148, 163, 184, 0.4);
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.9);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top, #1e293b 0, #020617 50%),
+        radial-gradient(circle at bottom, #0b1120 0, #020617 55%);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 22px 18px 60px;
+    }
+
+    /* Header */
+
+    header {
+      position: sticky;
+      top: 10px;
+      z-index: 40;
+      margin-bottom: 28px;
+    }
+
+    .nav-shell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      border-radius: 999px;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.96),
+        rgba(2, 6, 23, 0.96)
+      );
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, #60a5fa, #1d4ed8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      box-shadow: 0 10px 28px rgba(37, 99, 235, 0.75);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-name {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .brand-tagline {
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    nav {
+      display: flex;
+      gap: 14px;
+      font-size: 12px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-soft);
+      padding: 6px 11px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover {
+      border-color: rgba(148, 163, 184, 0.7);
+      color: var(--text-main);
+      background: rgba(15, 23, 42, 0.96);
+    }
+
+    /* Hero */
+
+    main {
+      margin-top: 28px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.6fr);
+      gap: 26px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.45), transparent),
+        radial-gradient(circle at 100% 100%, rgba(37, 99, 235, 0.5), transparent);
+      border: 1px solid rgba(191, 219, 254, 0.7);
+      font-size: 11px;
+      color: #eff6ff;
+      margin-bottom: 16px;
+    }
+
+    .hero-badge span {
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(191, 219, 254, 0.7);
+      font-weight: 500;
+    }
+
+    .hero-title {
+      font-size: clamp(30px, 4vw, 36px);
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .hero-title span {
+      color: #bfdbfe;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--text-soft);
+      max-width: 640px;
+      margin-bottom: 18px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .chip {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 11px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.9);
+    }
+
+    .chip-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.22);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      font-size: 13px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      color: #f9fafb;
+      box-shadow: 0 18px 36px rgba(37, 99, 235, 0.7);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.8);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.96);
+      color: var(--text-main);
+      border-color: rgba(148, 163, 184, 0.7);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 1);
+      border-color: rgba(191, 219, 254, 0.8);
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      padding: 18px 18px 14px;
+      background:
+        radial-gradient(circle at 0 0, rgba(37, 99, 235, 0.22), transparent 60%),
+        radial-gradient(circle at 100% 100%, rgba(59, 130, 246, 0.35), transparent 55%),
+        rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .hero-card-title {
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(209, 213, 219, 0.9);
+    }
+
+    .hero-card-pill {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.98);
+      border: 1px solid rgba(191, 219, 254, 0.7);
+    }
+
+    .hero-card-body {
+      font-size: 12px;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    .hero-card-body p + p {
+      margin-top: 8px;
+    }
+
+    .hero-card-footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .hero-badge-soft {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.8);
+    }
+
+    .hero-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 0, rgba(129, 140, 248, 0.4), transparent 60%);
+      mix-blend-mode: screen;
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    /* Sections */
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .section-heading span {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+    }
+
+    .section-heading h2 {
+      font-size: 18px;
+    }
+
+    .section-heading-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        rgba(148, 163, 184, 0.9),
+        transparent
+      );
+    }
+
+    .section-description {
+      font-size: 13px;
+      color: var(--text-soft);
+      max-width: 640px;
+      margin-bottom: 18px;
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.4fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.98);
+      border-radius: var(--radius-lg);
+      padding: 16px 16px 14px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.98);
+    }
+
+    .card-title {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .card-subtitle {
+      font-size: 12px;
+      color: var(--text-soft);
+      margin-bottom: 8px;
+    }
+
+    .card-body {
+      font-size: 12px;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .pill {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      color: #e5e7eb;
+    }
+
+    .highlight-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .highlight-chip {
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      font-size: 12px;
+      color: #e5e7eb;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.95);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .skill-column-title {
+      font-size: 12px;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 6px;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .skill-tag {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      background: rgba(15, 23, 42, 0.96);
+    }
+
+    /* Projects */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+    }
+
+    .project-card {
+      position: relative;
+      background: rgba(15, 23, 42, 0.98);
+      border-radius: var(--radius-lg);
+      padding: 14px 14px 12px;
+      border: 1px solid rgba(37, 99, 235, 0.7);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.98);
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0 0, rgba(37, 99, 235, 0.3), transparent 60%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .project-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-title {
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .project-type {
+      font-size: 11px;
+      color: var(--text-soft);
+      margin-bottom: 6px;
+    }
+
+    .project-desc {
+      font-size: 12px;
+      color: #e5e7eb;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .project-link {
+      font-size: 11px;
+      text-decoration: none;
+      color: #bfdbfe;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 4px 9px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(191, 219, 254, 0.8);
+    }
+
+    .project-link:hover {
+      background: rgba(15, 23, 42, 1);
+    }
+
+    /* Contact */
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 14px;
+      align-items: center;
+    }
+
+    .contact-main {
+      font-size: 13px;
+      color: #e5e7eb;
+      line-height: 1.7;
+    }
+
+    .contact-highlight {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .contact-details {
+      font-size: 12px;
+      color: var(--text-soft);
+      margin-top: 10px;
+    }
+
+    .footer-text {
+      font-size: 11px;
+      text-align: center;
+      color: #6b7280;
+      margin-top: 22px;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-right {
+        order: -1;
+      }
+      header {
+        top: 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding-inline: 14px;
+      }
+      nav {
+        display: none;
+      }
+      .grid-two,
+      .contact-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero {
+        margin-top: 20px;
+      }
+      .nav-shell {
+        border-radius: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="nav-shell">
+        <div class="brand">
+          <div class="brand-avatar">DS</div>
+          <div class="brand-text">
+            <div class="brand-name">Dania Sami</div>
+            <div class="brand-tagline">MS in Technology at KTH and also working at KTH</div>
+          </div>
+        </div>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero" id="top">
+        <div>
+          <div class="hero-badge">
+            <span>Solution engineering mindset</span>
+            Listening first and building clear paths with technology
+          </div>
+          <h1 class="hero-title">
+            I enjoy helping people feel confident with technology
+            <span>and turning ideas into working solutions.</span>
+          </h1>
+          <p class="hero-subtitle">
+            MS in Technology student at KTH and also working at KTH.  
+            Cloud and AI focused. I combine communication leadership and technical work  
+            to support people in understanding and using technology in a simple and confident way.
+          </p>
+          <div class="hero-tags">
+            <div class="chip">
+              <span class="chip-dot"></span>
+              Based in Stockholm Sweden
+            </div>
+            <div class="chip">AWS Cloud Club Captain one year</div>
+            <div class="chip">Class Representative four years</div>
+            <div class="chip">Sports President four years</div>
+          </div>
+          <div class="hero-actions">
+            <a href="#projects" class="btn-primary">
+              View selected work
+            </a>
+            <a href="#contact" class="btn-ghost">
+              Contact and links
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <article class="hero-card">
+            <div class="hero-card-header">
+              <div class="hero-card-title">Profile snapshot</div>
+              <div class="hero-card-pill">Human and technical</div>
+            </div>
+            <div class="hero-card-body">
+              <p>
+                I have led groups as Class Representative for four years
+                and Sports President for four years. I have helped students and early engineers
+                learn cloud concepts as AWS Cloud Club Captain. These experiences taught me how
+                to listen understand and represent people with care.
+              </p>
+              <p>
+                My work includes AI agents automation workflows and web applications.
+                I like environments where communication clarity and ownership matter just as much as code.
+              </p>
+            </div>
+            <div class="hero-card-footer">
+              <span class="hero-badge-soft">MS in Technology at KTH</span>
+              <span class="hero-badge-soft">Cloud and AI interest</span>
+              <span class="hero-badge-soft">Leadership background</span>
+            </div>
+            <div class="hero-glow"></div>
+          </article>
+        
+<article class="project-card">
+  <div class="project-inner">
+    <h3 class="project-title">Copilot Workspace</h3>
+    <p class="project-type">AI and Productivity Engineering</p>
+    <p class="project-desc">
+      A Copilot based workspace demonstrating automation, intelligent workflows,
+      and enhanced productivity through AI powered tooling.
+    </p>
+    <a href="https://github.com/dania-sami/microsoft-solution-engineering-portfolio/blob/main/copilot%20workspace.zip"
+       target="_blank"
+       class="project-link">
+       Download Workspace
+    </a>
+  </div>
+</article>
+
+
+<article class="project-card">
+  <div class="project-inner">
+    <h3 class="project-title">Meet Dania</h3>
+    <p class="project-type">Interactive Experience</p>
+    <p class="project-desc">
+      A personal interactive project created to showcase storytelling, creativity,
+      and a more human centered approach to presenting identity and personality.
+    </p>
+    <a href="https://github.com/dania-sami/microsoft-solution-engineering-portfolio/tree/main/MEET%20DANIA"
+       target="_blank"
+       class="project-link">
+       View on GitHub
+    </a>
+  </div>
+</article>
+
+
+<article class="project-card">
+  <div class="project-inner">
+    <h3 class="project-title">Azure Strategy Studio Premium</h3>
+    <p class="project-type">Cloud Solution Architecture</p>
+    <p class="project-desc">
+      A premium level Azure strategic design project focusing on architecture,
+      cloud decision making and solution planning for advanced scenarios.
+    </p>
+    <a href="https://github.com/dania-sami/Cloud-Solution-Architecture-/tree/main/azure-strategy-studio-premium-final"
+       target="_blank"
+       class="project-link">
+       View on GitHub
+    </a>
+  </div>
+</article>
+
+</div>
+      </section>
+
+      <!-- About and high level experience -->
+      <section id="about">
+        <div class="section-heading">
+          <span>Overview</span>
+          <h2>About and foundation</h2>
+          <div class="section-heading-line"></div>
+        </div>
+        <p class="section-description">
+          I like environments where people are learning together sharing ideas and building real solutions.
+          My path has combined technical learning with roles that require representation teamwork and clear communication.
+        </p>
+
+        <div class="grid-two">
+          <article class="card">
+            <h3 class="card-title">KTH Royal Institute of Technology</h3>
+            <p class="card-subtitle">MS in Technology and working at KTH</p>
+            <p class="card-body">
+              At KTH I balance studies with work inside the university.
+              I spend time understanding new concepts and then explaining them clearly to others.
+              This helps me stay comfortable in situations where I do not have every answer yet
+              but can still support decisions by learning quickly and structuring information for others.
+            </p>
+            <div class="pill-row">
+              <span class="pill">Problem solving</span>
+              <span class="pill">Communication</span>
+              <span class="pill">Research and structure</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">Leadership and representation</h3>
+            <p class="card-subtitle">Class Representative and Sports President</p>
+            <p class="card-body">
+              During my bachelor studies I served as Class Representative for four years and
+              Sports President for four years. I listened to classmates understood their concerns
+              communicated them to faculty and balanced different viewpoints with my own.
+              In sports I learned how to motivate teams handle difficult situations and
+              create an environment where everyone felt included and prepared.
+            </p>
+            <div class="pill-row">
+              <span class="pill">Interpersonal skills</span>
+              <span class="pill">Team motivation</span>
+              <span class="pill">Conflict handling</span>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="highlight-chip">
+            Academic and work experience combined at KTH
+          </div>
+          <div class="highlight-chip">
+            Early focus on communication as a core skill
+          </div>
+        
+<article class="project-card">
+  <div class="project-inner">
+    <h3 class="project-title">Copilot Workspace</h3>
+    <p class="project-type">AI and Productivity Engineering</p>
+    <p class="project-desc">
+      A Copilot based workspace demonstrating automation, intelligent workflows,
+      and enhanced productivity through AI powered tooling.
+    </p>
+    <a href="https://github.com/dania-sami/microsoft-solution-engineering-portfolio/blob/main/copilot%20workspace.zip"
+       target="_blank"
+       class="project-link">
+       Download Workspace
+    </a>
+  </div>
+</article>
+
+
+<article class="project-card">
+  <div class="project-inner">
+    <h3 class="project-title">Meet Dania</h3>
+    <p class="project-type">Interactive Experience</p>
+    <p class="project-desc">
+      A personal interactive project created to showcase storytelling, creativity,
+      and a more human centered approach to presenting identity and personality.
+    </p>
+    <a href="https://github.com/dania-sami/microsoft-solution-engineering-portfolio/tree/main/MEET%20DANIA"
+       target="_blank"
+       class="project-link">
+       View on GitHub
+    </a>
+  </div>
+</article>
+
+
+<article class="project-card">
+  <div class="project-inner">
+    <h3 class="project-title">Azure Strategy Studio Premium</h3>
+    <p class="project-type">Cloud Solution Architecture</p>
+    <p class="project-desc">
+      A premium level Azure strategic design project focusing on architecture,
+      cloud decision making and solution planning for advanced scenarios.
+    </p>
+    <a href="https://github.com/dania-sami/Cloud-Solution-Architecture-/tree/main/azure-strategy-studio-premium-final"
+       target="_blank"
+       class="project-link">
+       View on GitHub
+    </a>
+  </div>
+</article>
+
+</div>
+      </section>
+
+      <!-- Cloud and internship experience -->
+      <section id="experience">
+        <div class="section-heading">
+          <span>Experience</span>
+          <h2>Cloud community and technical work</h2>
+          <div class="section-heading-line"></div>
+        </div>
+        <p class="section-description">
+          I enjoy being at the point where people meet technology.
+          Guiding learners through cloud concepts building AI agents and supporting real projects
+          has helped me think in a solution oriented way.
+        </p>
+
+        <div class="grid-two">
+          <article class="card">
+            <h3 class="card-title">AWS Cloud Club Captain</h3>
+            <p class="card-subtitle">One year leading a cloud focused community</p>
+            <p class="card-body">
+              As AWS Cloud Club Captain I guided students and early engineers through cloud concepts.
+              I planned sessions answered questions simplified topics that felt complex
+              and encouraged people to feel confident while learning.
+              This experience showed me that good engineers listen with patience anticipate what others need
+              and guide them step by step rather than trying to impress them.
+            </p>
+            <div class="pill-row">
+              <span class="pill">Cloud learning facilitation</span>
+              <span class="pill">Session planning</span>
+              <span class="pill">Public speaking</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">Cloud and AI project work</h3>
+            <p class="card-subtitle">AI agents automation and web applications</p>
+            <p class="card-body">
+              In my cloud oriented work I contributed to AI agents automation workflows and web applications.
+              I focused on understanding the user context finding blockers and building solutions
+              that helped people move forward with more clarity and confidence.
+              These experiences helped me think the way a solution engineer should think.
+            </p>
+            <div class="pill-row">
+              <span class="pill">AI agents</span>
+              <span class="pill">Automation ideas</span>
+              <span class="pill">Web development</span>
+            </div>
+          </article>
+        
+<article class="project-card">
+  <div class="project-inner">
+    <h3 class="project-title">Copilot Workspace</h3>
+    <p class="project-type">AI and Productivity Engineering</p>
+    <p class="project-desc">
+      A Copilot based workspace demonstrating automation, intelligent workflows,
+      and enhanced productivity through AI powered tooling.
+    </p>
+    <a href="https://github.com/dania-sami/microsoft-solution-engineering-portfolio/blob/main/copilot%20workspace.zip"
+       target="_blank"
+       class="project-link">
+       Download Workspace
+    </a>
+  </div>
+</article>
+
+
+<article class="project-card">
+  <div class="project-inner">
+    <h3 class="project-title">Meet Dania</h3>
+    <p class="project-type">Interactive Experience</p>
+    <p class="project-desc">
+      A personal interactive project created to showcase storytelling, creativity,
+      and a more human centered approach to presenting identity and personality.
+    </p>
+    <a href="https://github.com/dania-sami/microsoft-solution-engineering-portfolio/tree/main/MEET%20DANIA"
+       target="_blank"
+       class="project-link">
+       View on GitHub
+    </a>
+  </div>
+</article>
+
+
+<article class="project-card">
+  <div class="project-inner">
+    <h3 class="project-title">Azure Strategy Studio Premium</h3>
+    <p class="project-type">Cloud Solution Architecture</p>
+    <p class="project-desc">
+      A premium level Azure strategic design project focusing on architecture,
+      cloud decision making and solution planning for advanced scenarios.
+    </p>
+    <a href="https://github.com/dania-sami/Cloud-Solution-Architecture-/tree/main/azure-strategy-studio-premium-final"
+       target="_blank"
+       class="project-link">
+       View on GitHub
+    </a>
+  </div>
+</article>
+
+</div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills"><div class="section-heading"><span>Skills</span><h2>My strengths</h2><div class="section-heading-line"></div></div><p class="section-description">I led the Sports Society as President for four years, served as Class Representative for four years, and spent one year as AWS Cloud Club Captain. These roles strengthened my communication and leadership skills.</p></section><section id="projects">
+        <div class="section-heading">
+          <span>Work</span>
+          <h2>Selected projects</h2>
+          <div class="section-heading-line"></div>
+        </div>
+        <p class="section-description">
+          Below are selected projects that reflect my focus on cloud work, AI and solution engineering. Recruiters can click directly into the code and assets on GitHub.
+        </p>
+
+        
+
+
+  </article>
+
+  <article class="project-card">
+    <div class="project-inner">
+      <h3 class="project-title">Copilot Workspace</h3>
+      <p class="project-type">AI and Productivity Engineering</p>
+      <p class="project-desc">
+        A Copilot based workspace that demonstrates automation, intelligent workflows
+        and enhanced productivity through AI powered tooling.
+      </p>
+      <a href="https://github.com/dania-sami/microsoft-solution-engineering-portfolio/blob/main/copilot%20workspace.zip"
+         target="_blank"
+         class="project-link">
+         Download workspace
+      </a>
+    </div>
+  </article>
+
+  <article class="project-card">
+    <div class="project-inner">
+      <h3 class="project-title">Meet Dania</h3>
+      <p class="project-type">Interactive experience</p>
+      <p class="project-desc">
+        A personal interactive project that focuses on storytelling, creativity
+        and a more human centered approach to presenting identity and personality.
+      </p>
+      <a href="https://github.com/dania-sami/microsoft-solution-engineering-portfolio/tree/main/MEET%20DANIA"
+         target="_blank"
+         class="project-link">
+         View on GitHub
+      </a>
+    </div>
+  </article>
+
+  <article class="project-card">
+    <div class="project-inner">
+      <h3 class="project-title">Azure Strategy Studio Premium</h3>
+      <p class="project-type">Cloud solution architecture</p>
+      <p class="project-desc">
+        A premium level Azure strategic design project that focuses on architecture,
+        cloud decision making and solution planning for advanced scenarios.
+      </p>
+      <a href="https://github.com/dania-sami/Cloud-Solution-Architecture-/tree/main/azure-strategy-studio-premium-final"
+         target="_blank"
+         class="project-link">
+         View on GitHub
+      </a>
+    </div>
+  </article>
+</div>
+
+  </article>
+</div>
+
+          </article>
+
+          <article class="project-card">
+            <div class="project-inner">
+              <h3 class="project-title">Automation workflow example</h3>
+              <p class="project-type">Cloud and scripting</p>
+              <p class="project-desc">
+                Placeholder for a script based or cloud oriented automation project
+                that shows how you reduce repeat work and support users.
+              </p>
+              <a href="#" class="project-link">
+                GitHub link will go here
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-inner">
+              <h3 class="project-title">Web application example</h3>
+              <p class="project-type">Web application</p>
+              <p class="project-desc">
+                Placeholder for a web project such as a Next style page
+                that focuses on clarity for the user and simple clean design.
+              </p>
+              <a href="#" class="project-link">
+                GitHub link will go here
+              </a>
+            </div>
+          </article>
+        
+<article class="project-card">
+  <div class="project-inner">
+    <h3 class="project-title">Copilot Workspace</h3>
+    <p class="project-type">AI and Productivity Engineering</p>
+    <p class="project-desc">
+      A Copilot based workspace demonstrating automation, intelligent workflows,
+      and enhanced productivity through AI powered tooling.
+    </p>
+    <a href="https://github.com/dania-sami/microsoft-solution-engineering-portfolio/blob/main/copilot%20workspace.zip"
+       target="_blank"
+       class="project-link">
+       Download Workspace
+    </a>
+  </div>
+</article>
+
+
+<article class="project-card">
+  <div class="project-inner">
+    <h3 class="project-title">Meet Dania</h3>
+    <p class="project-type">Interactive Experience</p>
+    <p class="project-desc">
+      A personal interactive project created to showcase storytelling, creativity,
+      and a more human centered approach to presenting identity and personality.
+    </p>
+    <a href="https://github.com/dania-sami/microsoft-solution-engineering-portfolio/tree/main/MEET%20DANIA"
+       target="_blank"
+       class="project-link">
+       View on GitHub
+    </a>
+  </div>
+</article>
+
+
+<article class="project-card">
+  <div class="project-inner">
+    <h3 class="project-title">Azure Strategy Studio Premium</h3>
+    <p class="project-type">Cloud Solution Architecture</p>
+    <p class="project-desc">
+      A premium level Azure strategic design project focusing on architecture,
+      cloud decision making and solution planning for advanced scenarios.
+    </p>
+    <a href="https://github.com/dania-sami/Cloud-Solution-Architecture-/tree/main/azure-strategy-studio-premium-final"
+       target="_blank"
+       class="project-link">
+       View on GitHub
+    </a>
+  </div>
+</article>
+
+</div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <div class="section-heading">
+          <span>Contact</span>
+          <h2>Let us connect</h2>
+          <div class="section-heading-line"></div>
+        </div>
+
+        <div class="card contact-card">
+          <div class="contact-main">
+            <div class="contact-highlight">
+              I am happy to talk about projects internships or ways to contribute.
+            </div>
+            <p>
+              I enjoy conversations about cloud AI solution engineering and how technology
+              can be made easier for people to understand.
+              If you would like to know more about my background or my projects
+              feel free to reach out.
+            </p>
+            <div class="contact-details">
+              Based in Stockholm Sweden  
+              Open to opportunities where I can listen understand and help build solutions
+            </div>
+          </div>
+          <div>
+            <article class="card">
+              <p class="card-body">
+                Email  
+                <br />
+                <strong>samidania669@gmail.com</strong>
+                <br /><br />
+                LinkedIn  
+                <br />
+                <a
+                  href="https://www.linkedin.com/in/dania-sami-51a829264"
+                  target="_blank"
+                  style="color: #bfdbfe; text-decoration: none;"
+                >
+                  linkedin.com/in/dania-sami-51a829264
+                </a>
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <p class="footer-text">
+          Designed with a Microsoft inspired style with focus on clarity people and real work.
+        </p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
